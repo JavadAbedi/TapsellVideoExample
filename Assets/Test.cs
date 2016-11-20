@@ -10,11 +10,11 @@ public class Test : MonoBehaviour {
 	void Start () {
 		// Set your key
 		DeveloperInterface.getInstance ().init ("ekdcaoonjrofaqipsbnffdlnrdafefalbhcmastitqhbffkhdcoqahdilnqrabcsiahoon");
-		DeveloperInterface.getInstance ().setAppUserId ("mane-mane-kalle-gonde");
+		DeveloperInterface.getInstance ().setAppUserId ("USER_ID");
 
 		// Check ready Video
 		// For Test Video: minimumAward = -2
-		DeveloperInterface.getInstance().checkCtaAvailability (-2, DeveloperInterface.VideoPlay_TYPE_SKIPPABLE, (Boolean connected, Boolean isAvailable) => {
+		DeveloperInterface.getInstance().checkCtaAvailability (-2, 0, (Boolean connected, Boolean isAvailable) => {
 			Debug.Log("Tapsell: " + connected + " " + isAvailable);
 		});
 	}
@@ -28,7 +28,7 @@ public class Test : MonoBehaviour {
 		if(GUI.Button(new Rect(50, 50, 100, 100), "Tapsell")){
 			 // Show Tapsell Video
 			 // For Test Video: minimumAward = -2
-			 DeveloperInterface.getInstance().showNewVideo (-2, DeveloperInterface.VideoPlay_TYPE_SKIPPABLE, (Boolean connected, Boolean isAvailable, int award) => {
+			 DeveloperInterface.getInstance().showNewVideo (-2, 0, (Boolean connected, Boolean isAvailable, int award) => {
 				Debug.Log("test " + connected + " " + isAvailable + " " + award);
 			 });
 		}

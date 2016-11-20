@@ -26,8 +26,10 @@ public class DeveloperInterface{
 	}
 	
 	public void setJavaObject(){
-		AndroidJavaClass jc = new AndroidJavaClass("ir.tapsell.tapsellvideosdk.developer.DeveloperInterface");
-		developerInterface = jc.CallStatic<AndroidJavaObject>("getInstance");
+		#if UNITY_ANDROID
+			AndroidJavaClass jc = new AndroidJavaClass("ir.tapsell.tapsellvideosdk.developer.DeveloperInterface");
+			developerInterface = jc.CallStatic<AndroidJavaObject>("getInstance");
+		#endif
 	}
 
 	public void checkCtaAvailability(int minimumAward, int type, Action<Boolean, Boolean> action){
